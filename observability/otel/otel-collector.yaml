@@ -1,0 +1,14 @@
+# OpenTelemetry collector placeholder for future real-service ingestion
+receivers:
+  otlp:
+    protocols:
+      http:
+      grpc:
+exporters:
+  logging:
+    loglevel: info
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [logging]
